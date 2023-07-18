@@ -10,7 +10,7 @@
 
 <body>
     <!-- Header -->
-    <nav class="bg-white relative">
+    <nav class="bg-white relative py-4">
         <div class="mx-auto px-8">
             <div class="flex justify-between">
                 <div class="flex space-x-7">
@@ -45,12 +45,32 @@
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button class="outline-none mobile-menu-button">
-                        <svg class=" w-6 h-6 text-gray-500 hover:text-black " x-show="!showMenu" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
+                    <button class="relative  mobile-menu-button">
+                        <div
+                            class="relative flex overflow-hidden items-center justify-center w-[50px] h-[50px] transform transition-all duration-200">
+                            <div
+                                class="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden">
+                                <div
+                                    class="bg-slate-700 h-[2px] w-7 transform transition-all duration-300 origin-left group-focus:translate-y-6 delay-100">
+                                </div>
+                                <div
+                                    class="bg-slate-700 h-[2px] w-7 rounded transform transition-all duration-300 group-focus:translate-y-6 delay-75">
+                                </div>
+                                <div
+                                    class="bg-slate-700 h-[2px] w-7 transform transition-all duration-300 origin-left group-focus:translate-y-6">
+                                </div>
+
+                                <div
+                                    class="absolute items-center justify-between transform transition-all duration-500 top-2.5 -translate-x-10 group-focus:translate-x-0 flex w-0 group-focus:w-12">
+                                    <div
+                                        class="absolute bg-slate-700 h-[2px] w-5 transform transition-all duration-500 rotate-0 delay-300 group-focus:rotate-45">
+                                    </div>
+                                    <div
+                                        class="absolute bg-slate-700 h-[2px] w-5 transform transition-all duration-500 -rotate-0 delay-300 group-focus:-rotate-45">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </button>
                 </div>
             </div>
@@ -92,40 +112,18 @@
         </div>
     </section>
     <!-- Short Links -->
-    <section class="mx-auto max-w-5xl py-6 px-4">
-        <div class="p-6 bg-violet-950 flex-col space-y-4  md:space-y-0 rounded-lg flex md:justify-between md:flex-row md:items-start">
+    <section class="mx-auto max-w-5xl py-6 px-4 ">
+        <div class="p-6  bg-violet-950 flex-col space-y-4  md:space-y-0 rounded-lg flex md:justify-between md:flex-row md:items-start">
             <div class=" md:w-[80%] md:mr-4 space-y-3">
-                <input class="focus:outline-none w-full px-4 py-2 rounded-lg placeholder-yellow-500" id="input-link" type="text"
-                    placeholder="Shorten a link here..."  required>
+                <input class="focus:outline-none w-full px-4 py-2 rounded-lg placeholder-yellow-500" id="input-link"
+                    type="text" placeholder="Shorten a link here..." required>
                 <p id="message" class=" text-red-500 text-xs w-full"></p>
             </div>
 
             <button class="btn btn--secondary whitespace-nowrap" id="shorten">Shorten It!</button>
         </div>
-
-        <div class="link-container">
-            <p class="link-main">https://www.frontendmentor.io</p>
-            <div class="short-link-box">
-                <p class="short-link-result">https://rel.ink/abc123</p>
-                <button class="short-link-button">Coppy</button>
-            </div>
-        </div>
-
-        <div class="link-container">
-            <p class="link-main">https://www.frontendmentor.io</p>
-            <div class="short-link-box">
-                <p class="short-link-result">https://rel.ink/abc123</p>
-                <button class="btn btn--active">Coppy</button>
-            </div>
-        </div>
-
-        <div class="link-container">
-            <p class="link-main">https://www.frontendmentor.io</p>
-            <div class="short-link-box">
-                <p class="short-link-result">https://rel.ink/abc123</p>
-                <button class="short-link-button">Coppy</button>
-            </div>
-        </div>
+        <!-- Links container -->
+        <div id="links" > </div>   
     </section>
     <!-- statistic -->
     <section class="px-4 py-12 z-10">
@@ -134,13 +132,10 @@
             <p>Track how your links are performing across the web with our
                 advanced statistics dashboard.</p>
         </div>
-        <div
-            class="statistic-items">
+        <div class="statistic-items">
 
-            <div
-                class="statistic-item ">
-                <div
-                    class="statistic-img">
+            <div class="statistic-item ">
+                <div class="statistic-img">
                     <img src="images/icon-brand-recognition.svg" alt="icon">
                 </div>
                 <h3 class="statistic-title">Brand Recognition</h3>
@@ -148,11 +143,9 @@
                     mean a thing. Branded links help instil confidence in your content.</p>
             </div>
 
-            <div
-                class="statistic-item statistic-connect md:top-8">
+            <div class="statistic-item statistic-connect md:top-8">
 
-                <div
-                    class="statistic-img">
+                <div class="statistic-img">
                     <img src="images/icon-brand-recognition.svg" alt="icon">
                 </div>
                 <h3 class="statistic-title">Detailed Records</h3>
@@ -160,10 +153,8 @@
                     people engage with your content helps inform better decisions.</p>
             </div>
 
-            <div
-                class="statistic-item md:top-16 ">
-                <div
-                    class="statistic-img">
+            <div class="statistic-item md:top-16 ">
+                <div class="statistic-img">
                     <img src="images/icon-brand-recognition.svg" alt="icon">
                 </div>
                 <h3 class="statistic-title">Fully Customizable</h3>
@@ -187,8 +178,7 @@
             <img src="./images/logo.svg" alt="logo">
         </div>
         <div class="text-center px-8">
-            <ul
-                class="footer-link grid grid-cols-1  gap-y-4  md:gap-y-0 md:grid-cols-3 md:text-left gap-x-40 align-top">
+            <ul class="footer-link grid grid-cols-1  gap-y-4  md:gap-y-0 md:grid-cols-3 md:text-left gap-x-8 align-top">
                 <div class="space-y-4">
                     <li class="font-bold  py-6">Features</li>
                     <li>Link Shortening</li>
@@ -240,51 +230,8 @@
             </a>
         </div>
     </footer>
-
-
-
-
-
-
-
-
-
-    <script>
-        const btn = document.querySelector("button.mobile-menu-button");
-        const menu = document.querySelector(".mobile-menu");
-
-        btn.addEventListener("click", () => {
-            menu.classList.toggle("hidden");
-        });
-    </script>
-    <script>
-        function validateLink(input, message) {
-            const urlPattern = /^(https?:\/\/)?([\w.-]+)\.([a-z]{2,})(:\d{1,5})?([\/\w.-]*)*\/?$/i;
-
-            if (input === '') {
-                message.textContent = 'Please enter something';
-                return false;
-            }
-
-            if (urlPattern.test(input)) {
-                message.textContent = "";
-                alert("Link validation success!");
-                return true;
-            } else {
-                message.textContent = 'Please enter a valid URL';
-                return false;
-            }
-            return true;
-        }
-
-        const shortenBtn = document.querySelector("#shorten");
-        shortenBtn.addEventListener('click', function () {
-            const inputLink = document.querySelector("#input-link").value;
-            const message = document.querySelector("#message");
-
-            validateLink(inputLink, message);
-        })
-    </script>
+    <script src="./js/buttonToggle.js"></script>
+    <script src="./js/validation.js"></script>
 </body>
 
 </html>
